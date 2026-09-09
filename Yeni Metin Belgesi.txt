@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='tr'>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset='UTF-8'>
+
+ </head>
+ <body>
+  <div class='container'>
+     <a href='#'>Menü</a>
+     <a href='#'>Koþular</a>
+     <a href='#'>Ýstatislikler</a>
+     <a href='#'>Ýletiþim</a>
+  </div>
+
+
+ </body>
+</html>

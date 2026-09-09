@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang='tr'>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset='UTF-8'>
+
+   <style>
+      *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+      }
+
+     body{
+       background-color:#F8F9FA;
+       scroll-behavior:smooth;
+       font-family: Arial, sans-serif;
+     }
+
+     .navbar{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:20px;
+        position:sticky;
+        background-color:#111111;
+        top:0;
+        width:100%;
+        z-index:1000;
+        flex-wrap:wrap;
+     }
+
+     .nav-item{
+        text-decoration:none;
+        cursor:pointer;
+        padding:7px 20px;
+        display:inline-block;
+        font-size:20px;
+        color:#FFFFFF;
+     }
+
+     .nav-item:hover{
+        background-color:#FC4C02;
+        color:#FFFFFF;
+        border-radius:8px;
+     }
+
+     .ben{
+       width:400px;
+       height:570px;
+       animation-name:slide1;
+       animation-duration:3s;
+     }
+
+     .container{
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       flex-wrap:wrap;
+       overflow:hidden;
+     }
+
+     #hero, #IST{
+       gap:60px;
+      }
+
+     h1{
+      padding:20px;
+      font-size:50px;
+      color:#333333;
+      animation-name:slide;
+      animation-duration:3s;
+     }
+
+    .kosular, .ist{
+       margin-top:210px;
+     }
+
+     .k{
+       width:300px;
+       height:300px;
+       transition:transform 0.3s ease;
+       border-radius:8px;
+     }
+
+     .k:hover{
+       transform:scale(1.1);
+     }
+
+     @keyframes kaydir{
+       0%{
+          transform:translateX(0);
+        }
+       100%{
+         transform:translateX(-50%);
+       }
+     }
+
+     .slider-track{
+        animation: kaydir 50s linear infinite;
+        display:flex;
+        width: max-content;
+        gap:20px;
+      }
+
+     .slider-track:hover{
+        animation-play-state: paused;
+      }
+
+     @media (max-width: 768px) {
+          .navbar {
+             gap: 5px;
+             padding: 10px 0;
+          }
+
+          .nav-item {
+              font-size: 16px;
+              padding: 6px 10px;
+          }
+
+           #hero {
+               flex-direction: column-reverse;
+               gap: 20px;
+               text-align: center;
+             }
+
+           h1 {
+             font-size: 30px;
+             padding: 10px;
+           }
+
+           .ben {
+              width: 250px;
+              height: auto;
+            }
+
+           .kosular, .ist {
+               margin-top: 80px;
+            }
+
+           #IST {
+              flex-direction: column;
+              text-align: center;
+              gap: 20px;
+            }
+
+         .k {
+           width: 200px;
+           height: 200px;
+         }
+       }    
+   
+     @keyframes slide{
+         from{
+           opacity:0;
+           transform:translateX(-20px);
+          }
+         to{
+           opacity:1;
+           transform:translateX(0);
+          }
+       }
+   
+     @keyframes slide1{
+         from{
+           opacity:0;
+           transform:translateX(20px);
+          }
+         to{
+           opacity:1;
+           transform:translateX(0);
+          }
+       }
+
+     /* FORM VE TAB YAPISI DÜZELTMELERİ */
+     footer {
+       padding: 40px 0;
+     }
+
+     .form-wrapper {
+        background-color:#FFFFFF;
+        border:2px solid #E5E7EB;
+        width:260px;
+        height:280px;
+        box-shadow:5px 5px 5px rgba(0, 0, 0, 0.06);
+        text-align:center;
+        padding:15px 10px;
+        margin-top:30px;
+        border-radius:9px;
+        position: relative;
+        overflow: hidden;
+     }
+
+     .buton-box{
+        position:relative;
+        width: 180px;
+        margin: 0 auto 15px auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+     .but{
+       border:none;
+       outline:none;
+       padding:6px;
+       border-radius:20px;
+       cursor:pointer;
+       width:85px;
+       background: transparent;
+       z-index: 2;
+       font-weight: bold;
+      }
+
+      .BTN{
+        position:absolute;
+        top:0;
+        left:0px;
+        height:100%;
+        background-color:rgba(224, 62, 0, 0.5);
+        width:85px;
+        border-radius:20px;
+        transition:0.5s ease;
+        z-index: 1;
+       }
+
+      .tab-content {
+        position: absolute;
+        width: 220px;
+        left: 20px;
+        transition: 0.5s ease;
+      }
+
+      #Form {
+        left: 20px;
+      }
+
+      #smedya {
+        left: 260px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        height: 180px;
+      }
+
+      #smedya a {
+        color: #FC4C02;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.2s;
+      }
+
+      #smedya a:hover {
+        color: #111111;
+      }
+
+     .form-item{
+        margin-top:8px;
+        border-radius:5px;
+        background-color:#F9FAFB;
+        border:1px solid #D1D5DB;
+        outline:none;
+        width: 100%;
+        padding: 5px;
+       }
+
+       .form-item:focus, .form-item:hover{
+        border:1px solid #FC4C02;
+       }
+
+       .buton{
+        padding:6px 12px;
+        border:none;
+        box-shadow:1px 1px 1px gray;
+        margin-top:10px;
+        border-radius:9px;
+        outline:none;
+        cursor:pointer;
+        background-color:#FC4C02;
+        color:#FFFFFF;
+       }
+
+       .buton:hover{
+        background-color:#E03E00;
+       }
+   </style>
+ </head>
+ <body>
+  <nav class='navbar'>
+     <a href='#hero' class='nav-item'>Menü</a>
+     <a href='#kosular' class='nav-item'>Koşular</a>
+     <a href='#IST' class='nav-item'>Enler</a>
+     <a href='#Form' class='nav-item'>İletişim</a>
+  </nav>
+
+  <header>
+      <div class='container' id='hero'>
+        <h1>Daha hızlı değil, daha güçlü!</h1>
+        <img src='ben.png' class='ben' alt='Fotoğraf'>      
+      </div>
+  </header>
+
+  <section class='kosular' id='b1'>
+    <div class='container' id='kosular'>
+      <div class='slider-track'>
+       <img src='1.png' class='k' alt='k.istatistik'>
+       <img src='2.png' class='k' alt='k.istatistik'>
+       <img src='3.png' class='k' alt='k.istatistik'>
+       <img src='4.png' class='k' alt='k.istatistik'>
+       <img src='5.png' class='k' alt='k.istatistik'>
+       <img src='6.png' class='k' alt='k.istatistik'>
+       <img src='7.png' class='k' alt='k.istatistik'>
+       <img src='1.png' class='k' alt='k.istatistik'>
+       <img src='2.png' class='k' alt='k.istatistik'>
+       <img src='3.png' class='k' alt='k.istatistik'>
+      </div>
+    </div>
+  </section>
+
+  <section id='b2' class='ist'>
+    <div class='container' id='IST'>
+     <h1>EN UZUN MESAFE</h1>
+     <img src='4.png' class='k' alt='k.istatistik'>     
+    </div>
+  </section>
+
+  <footer>
+    <div class='container'>
+      <div class='form-wrapper'> 
+        
+        <div class='buton-box'> 
+          <div class='BTN' id='BTNRENK'></div>
+          <button type='button' class='but' id='but1'>Gönder</button>
+          <button type='button' class='but' id='but2'>S.Medya</button>
+        </div>
+
+        <!-- İletişim Formu -->
+        <div class='tab-content' id='Form'>
+          <input type='text' id='ad' class='form-item' placeholder='Ad Soyad:'>
+          <input type='email' id='email' class='form-item' placeholder='Email:'>
+          <input type='password' id='sifre' class='form-item' placeholder='Şifre:'>
+          <textarea class='form-item' placeholder='Mesajınız'></textarea>  
+          <input type='button' class='buton' id='buton1' value='Gönder'>
+          <input type='reset' class='buton' id='buton2' value='Temizle'>
+        </div>
+
+        <!-- Sosyal Medya Sekmesi -->
+        <div class='tab-content' id='smedya'>
+          <a href='https://meren-elgin.itch.io/'>ITCH.IO</a>
+          <a href='https://www.instagram.com/m.eren_elgin?stkn=MWxldWs1c2gxaWQzMw=='>INSTAGRAM</a>
+          <a href='https://github.com/Erenelgin'>GITHUB</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+ <script>
+   let x = document.getElementById('but1');
+   let y = document.getElementById('but2');
+   let z = document.getElementById('smedya');
+   let f = document.getElementById('Form');
+   let q = document.getElementById('BTNRENK');
+
+   // S.Medya Sekmesine Geçiş
+   y.onclick = function(){
+       f.style.left = "-260px";
+       z.style.left = "20px";
+       q.style.left = "95px";
+   }
+
+   // Gönder Sekmesine Geçiş
+   x.onclick = function(){
+       f.style.left = "20px";
+       z.style.left = "260px";
+       q.style.left = "0px";
+   }
+ </script>
+ </body>
+</html>
