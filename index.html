@@ -349,7 +349,7 @@
         <!-- İletişim Formu -->
         <div class='tab-content' id='Form'>
           <input type='text' id='ad' class='form-item' placeholder='Ad Soyad:' required>
-          <input type='email' id='email' class='form-item' placeholder='Email:' required>
+          <input type='email' id='em' class='form-item' placeholder='Email:' required>
           <input type='password' id='sifre' class='form-item' placeholder='Şifre:' required>
           <textarea class='form-item' placeholder='Mesajınız'></textarea>  
           <input type='submit' class='buton' id='buton1' value='Gönder'>
@@ -373,6 +373,33 @@
    let z = document.getElementById('smedya');
    let f = document.getElementById('Form');
    let q = document.getElementById('BTNRENK');
+   let a = document.getElementById('buton1');
+   let b = document.getElementById('sifre');
+   let c = document.getElementById('ad');
+   let d = document.getElementById('em');
+   let A;
+   let B;
+   let C;
+
+  a.onclick = function(){
+       A = b.value;
+       B = c.value;
+       C = d.value;
+        
+       switch(true){
+        case A == "":
+          window.alert('Lütfen şifre gir');
+          break;
+        case B == "":
+          window.alert('Lütfen ad soyad girin');
+          break;
+        case C == "":
+          window.alert('Lütfen email girin');
+          break;
+        default:
+          window.alert('HOŞGELDİNİZ');
+       }
+  }
 
    // S.Medya Sekmesine Geçiş
    y.onclick = function(){
