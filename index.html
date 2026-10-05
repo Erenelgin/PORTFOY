@@ -346,7 +346,7 @@
           <button type='button' class='but' id='but2'>S.Medya</button>
         </div>
 
-        <!-- İletişim Formu -->
+        
         <div class='tab-content' id='Form'>
           <input type='text' id='ad' class='form-item' placeholder='Ad Soyad:' required>
           <input type='email' id='em' class='form-item' placeholder='Email:' required>
@@ -356,7 +356,7 @@
           <input type='reset' class='buton' id='buton2' value='Temizle'>
         </div>
 
-        <!-- Sosyal Medya Sekmesi -->
+       
         <div class='tab-content' id='smedya'>
           <a href='https://meren-elgin.itch.io/'>ITCH.IO</a>
           <a href='https://www.instagram.com/m.eren_elgin?stkn=MWxldWs1c2gxaWQzMw=='>INSTAGRAM</a>
@@ -377,38 +377,16 @@
    let b = document.getElementById('sifre');
    let c = document.getElementById('ad');
    let d = document.getElementById('em');
-   let A;
-   let B;
-   let C;
 
-  a.onclick = function(){
-       A = b.value;
-       B = c.value;
-       C = d.value;
-        
-       switch(true){
-        case B == "":
-          window.alert('Lütfen isim gir');
-          break;
-        case C == "":
-          window.alert('Lütfen email girin');
-          break;
-        case A == "":
-          window.alert('Lütfen şifre girin');
-          break;
-        default:
-          window.alert('GÖNDERİNİZ ALINDI');
-       }
-  }
 
-   // S.Medya Sekmesine Geçiş
+   
    y.onclick = function(){
        f.style.left = "-260px";
        z.style.left = "20px";
        q.style.left = "95px";
    }
 
-   // Gönder Sekmesine Geçiş
+  
    x.onclick = function(){
        f.style.left = "20px";
        z.style.left = "260px";
